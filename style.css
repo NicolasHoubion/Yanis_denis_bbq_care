@@ -261,6 +261,10 @@ html {
     background-color: var(--dark-bg);
 }
 
+.contact-section {
+    background-color: var(--dark-section);
+}
+
 /* Engagement Section */
 .engagement-section {
     background: linear-gradient(135deg, #1a3a2e 0%, var(--dark-bg) 100%);
@@ -296,6 +300,107 @@ html {
     color: var(--text-light);
     font-style: italic;
     line-height: 1.8;
+}
+
+/* Contact Section */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card {
+    background: rgba(127, 255, 212, 0.05);
+    border: 2px solid rgba(127, 255, 212, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--vert-celeste);
+    box-shadow: 0 10px 30px rgba(127, 255, 212, 0.2);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--vert-celeste);
+    border-radius: 50%;
+    color: var(--vert-celeste);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1) rotate(10deg);
+    background: rgba(127, 255, 212, 0.1);
+}
+
+.contact-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.contact-card h3 {
+    font-size: 1.3rem;
+    color: var(--vert-celeste);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.contact-name {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.contact-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.contact-link:hover {
+    color: var(--vert-celeste);
+    transform: scale(1.05);
+}
+
+.contact-address {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.address-card {
+    grid-column: span 2;
+}
+
+.map-container {
+    margin-top: 3rem;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--vert-celeste);
+    box-shadow: 0 10px 40px rgba(127, 255, 212, 0.2);
+    height: 450px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(20%) contrast(1.1);
 }
 
 /* Footer */
@@ -380,5 +485,17 @@ html {
 
     .section {
         padding: 4rem 1rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .address-card {
+        grid-column: span 1;
+    }
+
+    .map-container {
+        height: 300px;
     }
 }

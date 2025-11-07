@@ -114,3 +114,34 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Animation des cartes de contact au survol
+const contactCards = document.querySelectorAll('.contact-card');
+
+contactCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.background = 'rgba(127, 255, 212, 0.1)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.background = 'rgba(127, 255, 212, 0.05)';
+    });
+});
+
+// Animation de la carte au scroll
+const mapContainer = document.querySelector('.map-container');
+if (mapContainer) {
+    const mapObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    mapContainer.style.opacity = '0';
+    mapContainer.style.transform = 'translateY(30px)';
+    mapContainer.style.transition = 'all 0.8s ease';
+    mapObserver.observe(mapContainer);
+}
